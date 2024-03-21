@@ -17,7 +17,6 @@ import Stack from '@mui/material/Stack';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Alert from '@mui/material/Alert';
 import server_url from '../config';
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -96,17 +95,6 @@ function Home(props) {
 
     return  (
         <div className="body-margin">
-          <div style={{height:'100px'}}>
-            <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-              <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              <Marker position={[51.505, -0.09]}>
-                <Popup>
-                  A pretty popup <br/>Easily customizable
-                </Popup>
-              </Marker>
-            </MapContainer>
-          </div>
           <Grid container spacing={2}>
               <Grid item xs={12}>
                   <TableContainer component={Paper}>

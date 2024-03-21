@@ -4,6 +4,7 @@ import './App.css';
 
 import Profile from './Profile';
 import Addition from './Addition';
+import Api from './Component/Api';
 import List from './Component/List';
 import Inventory from './Component/Inventory';
 import { useState } from 'react';
@@ -39,6 +40,11 @@ const changeId = (id) => {
               </Link>
             </div>
             <div>
+              <Link className="navbar-brand nav-link link" to="/api">
+                Api
+              </Link>
+            </div>
+            <div>
               <Link className="navbar-brand nav-link link" to="/inventory">
                 Inventory
               </Link>
@@ -51,6 +57,7 @@ const changeId = (id) => {
               <Route exact path="/" element={<Profile />} />
               <Route path="/addition" element={<Addition />} />
               <Route exact path='/inventory' element={<List callback={changeId} />} />
+              <Route path='/api' element={<Api />} />
               <Route path='/inventory/add' element={<Inventory type="add" />} />
               <Route path='/inventory/edit' element={<Inventory type="edit" id={id} />} />
             </Routes>
